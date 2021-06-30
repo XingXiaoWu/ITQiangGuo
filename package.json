@@ -1,0 +1,11 @@
+{
+  "name": "ITQiangGuo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:XingXiaoWu/ITQiangGuo.git",
+  "author": "xing.wu <wuxing@bjca.org.cn>",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.12.3"
+  }
+}
