@@ -1,6 +1,7 @@
 // 1.登陆
 const { chromium } = require('playwright');
-const login = require('./login')
+const login = require('./login.js');
+
 (async () => {
     const browser = await chromium.launch({
         headless: false,
