@@ -8,6 +8,19 @@ const login = async (page) => {
     const qr = await page.waitForSelector('#ddlogin-iframe')
     await qr.screenshot();
     // 判断是否登陆成功
+    await page.waitForNavigation();
 }
 
-module.exports = login
+const loginSuccess = async (page) => {
+    // 判断是否登录成功
+    const title = await page.title();
+    if (title === '我的学习' || title === '系统维护中') {
+        return true;
+    }
+    return false;
+}
+
+module.exports = {
+    login,
+    loginSuccess
+}
