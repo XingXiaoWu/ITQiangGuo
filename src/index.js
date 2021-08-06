@@ -3,6 +3,8 @@ const { chromium } = require('playwright');
 const { loginSuccess, login } = require('./login.js');
 const { saveCookies } = require('./user');
 (async () => {
+    saveCookies()
+    /*
     const browser = await chromium.launch({
         headless: false,
     });
@@ -22,7 +24,6 @@ const { saveCookies } = require('./user');
     const cookies = await context.cookies()
     // 存储cookie
     saveCookies(cookies)
-    console.log(cookies);
     // await page.waitForLoadState('domcontentloaded');
-    
+    */
 })();
