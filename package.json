@@ -9,6 +9,8 @@
     "start": "node ./src/index.js"
   },
   "dependencies": {
-    "playwright": "^1.12.3"
+    "fs-extra": "^10.0.0",
+    "playwright": "^1.12.3",
+    "undici": "^4.3.1"
   }
 }

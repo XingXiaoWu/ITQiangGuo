@@ -1,12 +1,14 @@
 // 1.登陆
 const { chromium } = require('playwright');
 const { loginSuccess, login } = require('./login.js');
-
+const { saveCookies } = require('./user');
 (async () => {
     const browser = await chromium.launch({
         headless: false,
     });
-    const page = await browser.newPage();
+    const context = await browser.newContext();
+
+    const page = await context.newPage();
     // 1.登陆
     await login(page);
     // 2.判读是否登录成功
@@ -16,6 +18,11 @@ const { loginSuccess, login } = require('./login.js');
         process.exit(1);
     }
     console.log('登录成功');
+    // 获取cookie
+    const cookies = await context.cookies()
+    // 存储cookie
+    saveCookies(cookies)
+    console.log(cookies);
     // await page.waitForLoadState('domcontentloaded');
     
 })();
