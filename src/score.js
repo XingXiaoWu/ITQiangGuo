@@ -1,5 +1,5 @@
 // 获取分数
-const {GET} = require('./utils/request')
+const { GET } = require('./utils/request')
 
 const getScore = async (cookies) => {
     // 网络请求
@@ -9,8 +9,10 @@ const getScore = async (cookies) => {
         tmpCookie = tmpCookie+ cookie.name + '=' + cookie.value + ';'
     });
     // 获取总分
-    const totalJSON = await GET('https://pc-api.xuexi.cn/open/api/score/get',{
-        cookie: tmpCookie,
+    const totalJSON = await GET('https://pc-api.xuexi.cn/open/api/score/get',{},{
+        headers:{
+            cookie: tmpCookie,
+        }
     });
     // 累计总分
     const total = totalJSON.data.score
@@ -18,13 +20,17 @@ const getScore = async (cookies) => {
     const userId = totalJSON.data.userId
 
     // 获取分数相关内容
-    const scoreJSON = await GET('https://pc-api.xuexi.cn/open/api/score/today/queryrate',{
-        cookie: tmpCookie,
+    const scoreJSON = await GET('https://pc-api.xuexi.cn/open/api/score/today/queryrate',{},{
+        headers:{
+            cookie: tmpCookie,
+        }
     })
 
     // 获取今天分数
-    const todayJSON = await GET('https://pc-api.xuexi.cn/open/api/score/today/query',{
-        cookie: tmpCookie,
+    const todayJSON = await GET('https://pc-api.xuexi.cn/open/api/score/today/query',{},{
+        headers:{
+            cookie: tmpCookie,
+        }
     })
     
     // 获取今日分数

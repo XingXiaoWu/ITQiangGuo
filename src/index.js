@@ -5,7 +5,7 @@ const { article } = require('./studyAction/articleAndViedo.js');
 const { saveCookies, getUserId } = require('./user');
 const userCookies = require('./user/cookie.json');
 (async () => {
-    /*
+
     const browser = await chromium.launch({
         headless: false,
     });
@@ -34,10 +34,10 @@ const userCookies = require('./user/cookie.json');
     // await page.waitForLoadState('domcontentloaded');
 
     // TODO:展示所有内容
-    */
+
     // 开始学习任务
-    const tmpCookie = userCookies['430397708'];
-    article(tmpCookie)
+    // const tmpCookie = userCookies['430397708'];
+    // article(tmpCookie)
 
     // article_thread = threads.MyThread("文章学 xi ", article, uid, cookies, article_index, scores, lock=lock)
         // video_thread = threads.MyThread("视频学 xi ", video, uid, cookies, video_index, scores, lock=lock)
