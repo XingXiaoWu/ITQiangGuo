@@ -1,1 +1,114 @@
-{}
+{
+	"430397708": [
+		{
+			"sameSite": "None",
+			"name": "_uab_collina",
+			"value": "162857711127376784826956",
+			"domain": "pc.xuexi.cn",
+			"path": "/points",
+			"expires": 1943937111,
+			"httpOnly": false,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "__UID__",
+			"value": "a5a1a8c0-f9a4-11eb-91da-b1e328f71467",
+			"domain": ".xuexi.cn",
+			"path": "/",
+			"expires": 1660113111.372161,
+			"httpOnly": false,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "tmzw",
+			"value": "1628577111555",
+			"domain": ".xuexi.cn",
+			"path": "/",
+			"expires": 1628663511,
+			"httpOnly": false,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "zwfigprt",
+			"value": "7766b5283bc276eae630969ac6a2faf1",
+			"domain": ".xuexi.cn",
+			"path": "/",
+			"expires": 1628663511,
+			"httpOnly": false,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "aliyungf_tc",
+			"value": "48aeb0d28ebc8fe56a222eb4adfcba88d582d7a40980c17e9d4833aa74fb90ad",
+			"domain": "pc-api.xuexi.cn",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": true,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "acw_tc",
+			"value": "781bad4a16285771118211837e238863d211d07c92ebcc3271868a75a5580e",
+			"domain": "pc-api.xuexi.cn",
+			"path": "/",
+			"expires": 1628578911.772557,
+			"httpOnly": true,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "aliyungf_tc",
+			"value": "2935d4e51da62de3b26cb93c1f1b48010046f994daaf578bdb993acdfad20dae",
+			"domain": "login.xuexi.cn",
+			"path": "/",
+			"expires": -1,
+			"httpOnly": true,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "acw_tc",
+			"value": "781bad4a16285771119393161e239f0c867d3bc826a8c395774214b052c595",
+			"domain": "login.xuexi.cn",
+			"path": "/",
+			"expires": 1628578911.898573,
+			"httpOnly": true,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "_bl_uid",
+			"value": "sOkyjs3I5kXosjrR7iqLa7wutwjw",
+			"domain": "login.xuexi.cn",
+			"path": "/",
+			"expires": 1644129112.422684,
+			"httpOnly": false,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "_bl_uid",
+			"value": "qgkjzsa858LoXRrndi65cFgpjb1C",
+			"domain": "pc.xuexi.cn",
+			"path": "/",
+			"expires": 1644129112.489696,
+			"httpOnly": false,
+			"secure": false
+		},
+		{
+			"sameSite": "None",
+			"name": "token",
+			"value": "1ae139d48cbd4fb896906859511bd427",
+			"domain": ".xuexi.cn",
+			"path": "/",
+			"expires": 1628620315.462587,
+			"httpOnly": false,
+			"secure": false
+		}
+	]
+}

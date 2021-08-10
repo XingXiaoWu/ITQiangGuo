@@ -4,10 +4,10 @@ const {GET} = require('./utils/request')
 const getScore = async (cookies) => {
     // 网络请求
     // 获取cookie
-    let tmpCookie = '_uab_collina=162824243529365826675354;__UID__=6b4d4f70-f699-11eb-8611-677a7b8eb094;tmzw=1628242435802;zwfigprt=8a02562e8e0eece84e8411e1af51925d;aliyungf_tc=7164a7444ab9e53ccba5a93c880b1e974d9e7ca2453705c8e968c0210f4bece1;acw_tc=2f6fc10b16282424361598079e932eff66686a52c711fa2b8583b089613f19;aliyungf_tc=2c95fe484d02463ad52bd884152d7a50371ad580d7d748af1cdf43ce89451bb1;acw_tc=2f6fc10b16282424363471676e9339956ebd9d044df90787efa1c4f0e1d2d6;_bl_uid=bqkIts1h09855eidO8j2vU8nbCz7;_bl_uid=e5kFdsv80Um54miy38IFvmgqaOk7;aliyungf_tc=acfaa87ea20dccc99e4510aa944304c26f94b8dfb45f616fb13e3d64d8b433a7;acw_tc=2f6fc10b16282424392901924e9339e99baddc30416dc3b1163ec02d9680d2;aliyungf_tc=c053760ea0697b2b501bf34c5b476968dd42cfda251e31b62af6def0009b5419;acw_tc=2f6fc10b16282424398364292e9358ac3080ec6b76aa969d24f4b4c28d2209;token=1615ebce22984211b2f1dccb82382cc8;'
-    // cookies.forEach(cookie => {
-    //     tmpCookie = tmpCookie+ cookie.name + '=' + cookie.value + ';'
-    // });
+    let tmpCookie = ''
+    cookies.forEach(cookie => {
+        tmpCookie = tmpCookie+ cookie.name + '=' + cookie.value + ';'
+    });
     // 获取总分
     const totalJSON = await GET('https://pc-api.xuexi.cn/open/api/score/get',{
         cookie: tmpCookie,
@@ -32,8 +32,7 @@ const getScore = async (cookies) => {
     // 每日任务
     let dayScoreDtos = scoreJSON.data.dayScoreDtos
 
-
-    console.log(today,dayScoreDtos);
+    // console.log(today,dayScoreDtos);
 
     let rule_list = [{
         ruleId: 1,
@@ -72,6 +71,17 @@ const getScore = async (cookies) => {
         })
     });
     scores.today = today
+    console.log('今日总分:'+today);
+
+    console.log('阅读文章:' + scores.article_num + ','+
+                '视听学习:' + scores.video_num + ','+
+                '登陆:' + scores.login + ','+
+                '文章时常:' + scores.article_time + ','+
+                '视听学 xi 时长:' + scores.video_time + ','+
+                '每日答题:' + scores.daily + ','+
+                '每周答题:' + scores.weekly + ','+
+                '专项答题:' + scores.zhuanxiang + ','
+                );
     // 阅读文章，视听学 xi ，登录，文章时长，视听学 xi 时长，每日答题，每周答题，专项答题
     return {
         userId,
@@ -79,7 +89,6 @@ const getScore = async (cookies) => {
         scores
     }
 }
-
 
 module.exports = {
     getScore

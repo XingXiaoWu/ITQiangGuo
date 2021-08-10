@@ -1,10 +1,9 @@
 // 1.登陆
 const { chromium } = require('playwright');
 const { loginSuccess, login } = require('./login.js');
-const { saveCookies } = require('./user');
+const { saveCookies, getUserId } = require('./user');
 (async () => {
-    saveCookies()
-    /*
+
     const browser = await chromium.launch({
         headless: false,
     });
@@ -22,8 +21,13 @@ const { saveCookies } = require('./user');
     console.log('登录成功');
     // 获取cookie
     const cookies = await context.cookies()
+    // 获取uid
+    const userId = await getUserId(cookies)
     // 存储cookie
-    saveCookies(cookies)
+    saveCookies(userId,cookies)
+    // TODO:用户id和名称
+
     // await page.waitForLoadState('domcontentloaded');
-    */
+
+    // TODO:展示所有内容
 })();
