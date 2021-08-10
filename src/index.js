@@ -1,11 +1,12 @@
 // 1.登陆
 const { chromium } = require('playwright');
 const { loginSuccess, login } = require('./login.js');
+const { getScore } = require('./score.js');
 const { article } = require('./studyAction/articleAndViedo.js');
 const { saveCookies, getUserId } = require('./user');
 const userCookies = require('./user/cookie.json');
 (async () => {
-
+    /*
     const browser = await chromium.launch({
         headless: false,
     });
@@ -30,14 +31,16 @@ const userCookies = require('./user/cookie.json');
     // 存完以后，关闭浏览器
     browser.close()
     // TODO:用户id和名称
-
+    */
     // await page.waitForLoadState('domcontentloaded');
 
     // TODO:展示所有内容
 
     // 开始学习任务
-    // const tmpCookie = userCookies['430397708'];
-    // article(tmpCookie)
+    const tmpCookie = userCookies['430397708'];
+    //  获取积分
+    const { userId , total , scores} = await getScore(tmpCookie);
+    article(tmpCookie,scores)
 
     // article_thread = threads.MyThread("文章学 xi ", article, uid, cookies, article_index, scores, lock=lock)
         // video_thread = threads.MyThread("视频学 xi ", video, uid, cookies, video_index, scores, lock=lock)

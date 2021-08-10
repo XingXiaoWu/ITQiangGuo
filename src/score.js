@@ -1,6 +1,6 @@
 // 获取分数
 const { GET } = require('./utils/request')
-
+const {article_num_all,video_num_all,article_time_all,video_time_all,login_all,daily_all,weekly_all,zhuanxiang_all} = require('./constValues')
 const getScore = async (cookies) => {
     // 网络请求
     // 获取cookie
@@ -79,14 +79,14 @@ const getScore = async (cookies) => {
     scores.today = today
     console.log('今日总分:'+today);
 
-    console.log('阅读文章:' + scores.article_num + ','+
-                '视听学习:' + scores.video_num + ','+
-                '登陆:' + scores.login + ','+
-                '文章时常:' + scores.article_time + ','+
-                '视听学 xi 时长:' + scores.video_time + ','+
-                '每日答题:' + scores.daily + ','+
-                '每周答题:' + scores.weekly + ','+
-                '专项答题:' + scores.zhuanxiang + ','
+    console.log('阅读文章:' + scores.article_num + '/' + article_num_all + ','+
+                '视听学习:' + scores.video_num + '/' + video_num_all + ','+
+                '登陆:' + scores.login + '/' + login_all + ','+
+                '文章时常:' + scores.article_time + '/' + article_time_all + ','+
+                '视听学 xi 时长:' + scores.video_time + '/' + video_time_all + ','+
+                '每日答题:' + scores.daily + '/' + daily_all + ','+
+                '每周答题:' + scores.weekly + '/' + weekly_all + ','+
+                '专项答题:' + scores.zhuanxiang + '/' + zhuanxiang_all + ','
                 );
     // 阅读文章，视听学 xi ，登录，文章时长，视听学 xi 时长，每日答题，每周答题，专项答题
     return {
